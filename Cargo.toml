@@ -1,0 +1,23 @@
+[package]
+name = "nrf-fuel-gauge"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Idiomatic Rust wrapper for Nordic's nRF Fuel Gauge library"
+repository = "https://github.com/Abrahamh08/nrf-fuel-gauge"
+
+[features]
+primary = ["nrfxlib-sys/nrf_fuel_gauge_primary_cell"]
+
+# (optionally pass chip features through if you like)
+nrf5340 = ["nrfxlib-sys/nrf5340"]
+nrf9160 = ["nrfxlib-sys/nrf9160"]
+nrf9151 = ["nrfxlib-sys/nrf9151"]
+nrf9161 = ["nrfxlib-sys/nrf9161"]
+nrf9120 = ["nrfxlib-sys/nrf9120"]
+
+[dependencies]
+nrfxlib-sys = { git = "https://github.com/Abrahamh08/nrfxlib-sys", features = ["nrf_fuel_gauge"] }
+
+[package.metadata.docs.rs]
+features = []
